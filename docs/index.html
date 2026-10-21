@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+ <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+ <meta name="theme-color" content="#d86796"><meta name="description" content="桂森力工学院的轻松校园恋爱物语。一个斑海豹，三次心动。约20分钟，三个告白结局。">
+ <title>只想认真读书的我，为什么打个乒乓球也能触发恋爱事件？</title>
+ <link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="pink.css">
+ <script defer src="story.js"></script><script defer src="rally.js"></script><script defer src="game.js"></script>
+</head>
+<body>
+ <div id="app">
+  <section id="home" class="home" aria-label="游戏主菜单">
+   <div class="home-bg"></div><div class="home-grain"></div>
+   <header class="home-header"><span class="brand-mark" aria-hidden="true">◒</span><span>桂森力工学院<span class="brand-sub">CAMPUS LOVE STORIES</span></span><button class="icon-button" data-action="settings" aria-label="打开设置">设置</button></header>
+   <main class="home-main">
+    <div class="home-copy">
+     <p class="eyebrow"><span></span>一场意料之外的青春恋爱喜剧</p>
+     <h1>只想认真读书的我，<br>为什么<span class="title-em">打个乒乓球</span><br>也能触发<span class="title-love">恋爱事件？<i aria-hidden="true">♡</i></span></h1>
+     <p class="home-description">一个斑海豹，三次心动。<br>这一次，轮到你发球。</p>
+     <div class="home-meta"><span>约 20 分钟</span><span>3 个恋爱结局</span><span>标准视觉小说</span></div>
+     <div class="home-actions"><button id="start-button" class="primary-button">开始这段故事 <span aria-hidden="true">↗</span></button><button id="continue-button" class="secondary-button" hidden>继续上次故事 <span aria-hidden="true">→</span></button></div>
+     <div class="home-links"><button data-action="load">读取存档</button><span>／</span><button data-action="practice">球馆练习</button><span>／</span><button data-action="endings">回忆相册</button><span>／</span><button data-action="credits">关于故事</button></div>
+    </div>
+    <div class="home-art" aria-label="东北雨姐、Judy、噶辉与潘海生的角色展示">
+     <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><span class="art-word">LOVE<br>ALL.</span>
+     <div class="polaroid card-rain"><div class="portrait portrait-rain"></div><div class="card-label"><span>东北雨姐</span><small>再见，是新的开始。</small></div></div>
+     <div class="polaroid card-judy"><div class="portrait portrait-judy"></div><div class="card-label"><span>Judy</span><small>今天，不谈概率。</small></div></div>
+     <div class="polaroid card-gah"><div class="portrait portrait-gah"></div><div class="card-label"><span>噶辉</span><small>旁边的位置，留给你。</small></div></div>
+     <div class="hero-sticker"><div class="portrait portrait-pan"></div><span>本次事件当事人<br><b>潘海生 · 斑海豹</b></span></div>
+     <span class="decor-star star-one" aria-hidden="true">✧</span><span class="decor-star star-two" aria-hidden="true">✦</span>
+    </div>
+   </main>
+   <footer class="home-footer"><span>写在桂森的第一段心动</span><span id="ending-count">回忆收集 0 / 3</span></footer>
+  </section>
+  <section id="game" class="game" hidden aria-label="故事画面">
+   <div id="scene-background" class="scene-background"></div><div class="scene-shade"></div><div class="ambient-particles" aria-hidden="true"></div>
+   <header class="game-header"><div class="chapter-heading"><span id="chapter-number">CHAPTER 01</span><strong id="chapter-name"></strong><small id="location"></small></div><div class="game-header-right"><button data-action="home" aria-label="返回标题">标题</button><button data-action="settings">设置</button></div></header>
+   <div id="cast" class="cast" aria-hidden="true"></div>
+   <div id="chapter-card" class="chapter-card" hidden><small></small><strong></strong><span></span></div>
+   <div id="choices" class="choices" hidden aria-label="选择回答"></div>
+   <div class="dialogue-wrap">
+    <div id="speaker" class="speaker-name"></div>
+    <div id="dialogue-box" class="dialogue-box" role="button" tabindex="0" aria-label="点击继续对话">
+     <p id="dialogue-text" aria-live="polite"></p><span id="next-indicator" class="next-indicator" aria-hidden="true">点击继续 <i>▸</i></span>
+    </div>
+    <nav class="quick-menu" aria-label="游戏快捷操作"><button data-action="history">回顾</button><button data-action="save">保存</button><button data-action="load">读取</button><button id="auto-button" aria-pressed="false">自动</button><button id="skip-button" aria-pressed="false">已读快进</button><button data-action="settings" class="mobile-settings">设置</button><span class="keyboard-hint">空格 / 点击继续</span></nav>
+   </div>
+   <div class="chapter-progress" aria-hidden="true"><span id="progress-fill"></span></div>
+  </section>
+  <section id="cg-screen" class="cg-screen" hidden aria-label="告白成功的双人画面"><img id="cg-image" class="cg-image" alt=""><div id="cg-duet" class="cg-duet" hidden aria-label="潘海生与 Judy 的双人同框过渡画面"><div class="duet-pan"></div><div class="duet-judy"></div></div><div id="cg-hearts" class="cg-hearts" aria-hidden="true"></div><div class="cg-ribbon" aria-hidden="true"></div><div class="cg-caption"><span class="cg-kicker">CONFESSION SUCCESS · 告白成功</span><h2 id="cg-title"></h2><p id="cg-note"></p><button id="cg-continue" class="primary-button">珍藏此刻，继续 <span aria-hidden="true">♡</span></button></div></section>
+  <section id="ending-screen" class="ending-screen" hidden aria-label="结局"><div class="ending-decor">FIN.</div><span class="eyebrow">写在桂森的第一段心动</span><div id="ending-portrait" class="ending-portrait"></div><span id="ending-character" class="ending-character"></span><h2 id="ending-title"></h2><p id="ending-message"></p><p class="ending-caption">这一球，好好接住了。</p><div class="ending-actions"><button id="rechoose" class="primary-button">回到告白选择</button><button id="replay-cg" class="secondary-button">重看拥抱 CG</button><button data-action="home" class="secondary-button">返回标题</button></div></section>
+ </div>
+ <div id="modal-layer" class="modal-layer" hidden><section id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><header><div><small>桂森 · 故事手账</small><h2 id="modal-title"></h2></div><button id="close-modal" class="close-button" aria-label="关闭窗口">×</button></header><div id="modal-content" class="modal-content"></div></section></div>
+ <div id="toast" class="toast" role="status" hidden></div>
+ <noscript>请启用 JavaScript 后游玩这段故事。</noscript>
+</body>
+</html>
